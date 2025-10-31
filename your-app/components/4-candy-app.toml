@@ -13,7 +13,7 @@ branch    = "main"
 
 [values]
 namespace = "spookycandy"
-replicas = 2
+replicas = "2"
 secretName = "candy-db-secret"
-image.repository = "{{.nuon.components.candy_app_image.outputs.image}}"
-image.tag = "{{.nuon.components.candy_app_image.outputs.tag}}"
+"image.repository" = "{{.nuon.components.candy_app_image.outputs.image}}"
+"image.tag" = "{{.nuon.components.candy_app_image.outputs.tag}}"

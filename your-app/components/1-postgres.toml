@@ -7,12 +7,12 @@ storage_driver = "configmap"
 
 [public_repo]
 repo      = "https://github.com/matt-zach-s/spookycandy-nuon"
-directory = "your-app/src/components/postgres"
+directory = "your-app/src/components/postgres/postgresql"
 branch    = "main"
 
 [values]
-auth.username = "{{.nuon.inputs.inputs.db_user}}"
-auth.password = "{{.nuon.inputs.inputs.db_password}}"
-auth.database = "{{.nuon.inputs.inputs.db_name}}"
-primary.persistence.enabled = true
-primary.persistence.size = "10Gi"
+"auth.username" = "{{.nuon.inputs.inputs.db_user}}"
+"auth.password" = "{{.nuon.inputs.inputs.db_password}}"
+"auth.database" = "{{.nuon.inputs.inputs.db_name}}"
+"primary.persistence.enabled" = "true"
+"primary.persistence.size" = "10Gi"
