@@ -3,7 +3,6 @@ name           = "postgres"
 type           = "helm_chart"
 chart_name     = "postgresql"
 namespace      = "default"
-storage_driver = "configmap"
 
 [public_repo]
 repo      = "https://github.com/matt-zach-s/spookycandy-nuon"
