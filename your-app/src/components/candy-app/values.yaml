@@ -1,8 +1,8 @@
 namespace: spookycandy
 
 image:
-  repository: spookycandy
-  tag: latest
+  repository: ""  # Will be set by Nuon from Docker component
+  tag: ""         # Will be set by Nuon from Docker component
   pullPolicy: IfNotPresent
 
 replicas: 2

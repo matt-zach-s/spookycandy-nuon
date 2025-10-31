@@ -1,0 +1,11 @@
+#:schema https://api.nuon.co/v1/general/config-schema?type=docker
+
+name         = "candy_app_image"
+type         = "docker"
+dependencies = ["postgres", "db_secrets"]
+
+[public_repo]
+repo      = "matt-zach-s/spookycandy"
+branch    = "main"
+
+dockerfile = "Dockerfile"
