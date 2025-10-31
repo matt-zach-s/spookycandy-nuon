@@ -1,0 +1,18 @@
+#:schema https://api.nuon.co/v1/general/config-schema?type=helm
+name           = "postgres"
+type           = "helm_chart"
+chart_name     = "postgresql"
+namespace      = "spookycandy"
+storage_driver = "configmap"
+
+[public_repo]
+repo      = "https://github.com/matt-zach-s/spookycandy-nuon"
+directory = "your-app/src/components/postgres"
+branch    = "main"
+
+[values]
+auth.username = "{{.nuon.inputs.inputs.db_user}}"
+auth.password = "{{.nuon.inputs.inputs.db_password}}"
+auth.database = "{{.nuon.inputs.inputs.db_name}}"
+primary.persistence.enabled = true
+primary.persistence.size = "10Gi"

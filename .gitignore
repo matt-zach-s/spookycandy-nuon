@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.swo
+*~
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+.env
+.env.local
+node_modules/

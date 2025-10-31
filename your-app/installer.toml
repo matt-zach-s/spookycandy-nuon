@@ -1,0 +1,15 @@
+name                  = "installer"
+description           = "one click installer"
+documentation_url     = "https://github.com/matt-zach-s/spookycandy"
+community_url         = "https://github.com/matt-zach-s/spookycandy/issues"
+homepage_url          = "https://github.com/matt-zach-s/spookycandy"
+github_url            = "https://github.com/matt-zach-s/spookycandy"
+logo_url              = "https://raw.githubusercontent.com/matt-zach-s/spookycandy/main/public/placeholder-logo.png"
+demo_url              = ""
+favicon_url           = ""
+post_install_markdown = "Your Spooky Candy Manager has been successfully deployed!"
+footer_markdown       = "Happy Halloween! 🎃"
+copyright_markdown    = "© 2025 Spooky Candy Manager"
+og_image_url          = ""
+
+apps = []

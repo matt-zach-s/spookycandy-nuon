@@ -1,0 +1,17 @@
+#:schema https://api.nuon.co/v1/general/config-schema?type=helm
+name           = "candy_app"
+type           = "helm_chart"
+chart_name     = "spooky-candy-app"
+dependencies   = ["postgres", "db_secrets"]
+namespace      = "spookycandy"
+storage_driver = "configmap"
+
+[public_repo]
+repo      = "https://github.com/matt-zach-s/spookycandy-nuon"
+directory = "your-app/src/components/candy-app"
+branch    = "main"
+
+[values]
+namespace = "spookycandy"
+replicas = 2
+secretName = "candy-db-secret"

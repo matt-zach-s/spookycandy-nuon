@@ -1,0 +1,27 @@
+namespace: spookycandy
+
+image:
+  repository: spookycandy
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicas: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: "1"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+env:
+  NODE_ENV: "production"
+
+# Database connection will be injected from secret
+secretName: candy-db-secret

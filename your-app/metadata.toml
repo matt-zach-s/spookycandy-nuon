@@ -1,0 +1,5 @@
+version = "v2"
+
+description = "Spooky Candy Manager - Halloween candy recipe app"
+display_name = "Spooky Candy Manager"
+readme       = "./README.md"

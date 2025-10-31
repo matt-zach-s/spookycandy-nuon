@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spooky-candy-app
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: spooky-candy-app
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: spooky-candy-app
+  template:
+    metadata:
+      labels:
+        app: spooky-candy-app
+    spec:
+      containers:
+      - name: candy-app
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.targetPort }}
+          name: http
+          protocol: TCP
+        env:
+        - name: NODE_ENV
+          value: {{ .Values.env.NODE_ENV | quote }}
+        - name: NEON_DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secretName }}
+              key: NEON_DATABASE_URL
+        resources:
+          {{- toYaml .Values.resources | nindent 10 }}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3

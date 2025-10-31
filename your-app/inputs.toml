@@ -1,0 +1,46 @@
+#:schema https://api.nuon.co/v1/general/config-schema?source=inputs
+
+[[group]]
+name         = "dns"
+description  = "DNS Configurations"
+display_name = "Configurations for the domain"
+
+[[input]]
+name         = "domain"
+description  = "domain for the candy app endpoint e.g., nuon.run"
+default      = "nuon.run"
+display_name = "Domain"
+group        = "dns"
+
+[[input]]
+name         = "sub_domain"
+description  = "The sub domain for the Candy App service"
+default      = "spookycandy"
+display_name = "Sub Domain"
+group        = "dns"
+
+[[group]]
+name         = "database"
+description  = "Database Configuration"
+display_name = "PostgreSQL Database Settings"
+
+[[input]]
+name         = "db_name"
+description  = "Database name for the candy app"
+default      = "candydb"
+display_name = "Database Name"
+group        = "database"
+
+[[input]]
+name         = "db_user"
+description  = "Database username"
+default      = "candyuser"
+display_name = "Database Username"
+group        = "database"
+
+[[input]]
+name         = "db_password"
+description  = "Database password"
+default      = "changeme123"
+display_name = "Database Password"
+group        = "database"
