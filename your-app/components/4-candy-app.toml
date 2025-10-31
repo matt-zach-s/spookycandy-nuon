@@ -2,7 +2,7 @@
 name           = "candy_app"
 type           = "helm_chart"
 chart_name     = "spooky-candy-app"
-dependencies   = ["candy_app_image"]
+dependencies   = ["postgres", "db_secrets"]
 namespace      = "spookycandy"
 storage_driver = "configmap"
 
@@ -15,5 +15,5 @@ branch    = "main"
 namespace = "spookycandy"
 replicas = "2"
 secretName = "candy-db-secret"
-"image.repository" = "{{.nuon.components.candy_app_image.outputs.image}}"
-"image.tag" = "{{.nuon.components.candy_app_image.outputs.tag}}"
+"image.repository" = "traefik/whoami"
+"image.tag" = "latest"
