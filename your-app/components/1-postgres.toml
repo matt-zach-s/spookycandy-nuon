@@ -2,7 +2,7 @@
 name           = "postgres"
 type           = "helm_chart"
 chart_name     = "postgresql"
-namespace      = "spookycandy"
+namespace      = "default"
 storage_driver = "configmap"
 
 [public_repo]

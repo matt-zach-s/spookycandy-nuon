@@ -3,7 +3,7 @@ name           = "candy_app"
 type           = "helm_chart"
 chart_name     = "spooky-candy-app"
 dependencies   = ["postgres", "db_secrets"]
-namespace      = "spookycandy"
+namespace      = "default"
 storage_driver = "configmap"
 
 [public_repo]
@@ -12,7 +12,7 @@ directory = "your-app/src/components/candy-app"
 branch    = "main"
 
 [values]
-namespace = "spookycandy"
+namespace = "default"
 replicas = "2"
 secretName = "candy-db-secret"
 "image.repository" = "traefik/whoami"
